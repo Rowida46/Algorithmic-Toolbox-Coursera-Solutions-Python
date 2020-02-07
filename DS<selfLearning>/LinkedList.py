@@ -8,7 +8,27 @@ def reverse(head):
         pre = cur
         cur = nxt
     head = pre
-    return head 
+    return head
+
+'''
+llist1 >--- head of the first lsit
+llist2 >---- head of the second one
+
+'''
+def compare_lists(llist1, llist2):
+    tmp1 = llist1
+    tmp2 = llist2
+    if tmp1 == None or tmp2 == None :
+        return 0
+    while tmp1 :
+        if tmp1.data != tmp2.data :
+            return 0
+        tmp1 = tmp1.next
+        tmp2 = tmp2.next
+        if tmp2 == None  and tmp1 != None :
+            return 0
+    return 1
+
 
 class Node:
     def __init__(self , data):

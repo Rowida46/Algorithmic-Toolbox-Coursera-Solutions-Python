@@ -4,7 +4,6 @@ class Node :
         self.rightchild = None
         self.leftchild = None
     
-
 class Tree: ## binary search tree<<<<<BST>>>>
     def __init__(self):
         self.root = None
@@ -138,5 +137,28 @@ class Tree: ## binary search tree<<<<<BST>>>>
             else :
                 curr = curr.rightchild
         return -1
-    
+
+    def LeftDescendant(Self , node):
+        if not node.leftchild :
+            return node
+        else :
+            return self.LeftDescendant(node.leftchild)
+    def RightAncestor(self , node):
+        if not node.rightchild :
+            return node
+        else :
+            return self.RightAncestor(node.rightchild)
+    def AdjacentElements(self , node): ### coursera week 5 slide3
+        if not node.leftchild :
+            return RightAncestor(node.rightchild)
+        else:
+            return LeftDescendant(node.leftchild)
+    def RangeSearch(self , x , y):
+        list_of_inRange_elements = []
+        node = self.search(x)
+        while node.data <= y :
+            if node.data >= x:
+                list_of_inRange_elements.append(node)
+            node = self.AdjacentElements(node)
+        return list_of_inRange_elements
     

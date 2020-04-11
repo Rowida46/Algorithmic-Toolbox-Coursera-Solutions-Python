@@ -36,6 +36,16 @@ class linkedList:
                 break
             tmp = tmp.next
             i+=1
+            
+    def CountRec(self, node): 
+        if (not node): 
+            return 0
+        else: 
+            return 1 + self.CountRec(node.next) 
+  
+    # A wrapper over getCountRec() 
+    def getCount(self): 
+        return self.getCountRec(self.head) 
 ##### <<<< to delet >>>>
     def popfront(self):
         if not self.head :

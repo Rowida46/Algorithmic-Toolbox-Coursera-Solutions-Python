@@ -28,14 +28,14 @@ class linkedList:
     def insertbetween(self , data , index):
         node = Node(data)
         tmp = self.head 
-        i =1
+        i = 1
         while tmp:
             if i == index :
                 node.next = tmp.next
                 tmp.next = node
                 break
             tmp = tmp.next
-            i+=1
+            i += 1
             
     def CountRec(self, node): 
         if (not node): 
@@ -55,6 +55,7 @@ class linkedList:
             self.tail = self.head = None
         else : 
             self.head = self.head.next
+        return val
             
     def popback(self):
         if not self.head :
@@ -68,8 +69,9 @@ class linkedList:
             curr.next = None
             self.tail = curr
             
-    def popdata(self ,e ):
-        tmp=self.head       
+            
+    def popdata(self , e ):
+        tmp = self.head       
         ## if we gonna delet the head
         if self.head.data == e :
             self.head = tmp.next
@@ -80,15 +82,20 @@ class linkedList:
                 break
             tmp = tmp.next
     def deletindex(self , position):
-        i=1 ; tmp = self.head
-        if position ==0 :
-            self.head = tmp.next
+        i = 1 
+        tmp = self.head
+        if position == 0 :
+            if self.head.next:
+                self.head = tmp.next
+                return 
+            self.head = None
+
         while tmp :
             if i == position:
-                tmp.Next = tmp.next.next
+                tmp.next = tmp.next.next
                 break
-            tmp= tmp.next
-            i+=1
+            tmp = tmp.next
+            i += 1
     def erase(self , key):
         if not self.head :
             return False
@@ -128,6 +135,7 @@ class linkedList:
             next_node.next = cur ### to make next_node point to the pre node
             head = cur = next_node
             next_node = tmp
+    
     def tostring(self):
         cur = self.head 
         i = 0 

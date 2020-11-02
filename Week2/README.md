@@ -1,24 +1,17 @@
 I. File list
 ------------
-AVLTNode.cc		AVL tree node (AVLTNode) implementation
-AVLTNode.h		AVLTNode header
-AVLTree.cc		AVL tree (AVLTree) implementation
-AVLTree.h		AVLTree header
-BinarySearchTree.cc	Binary search tree (BinarySearchTree) implementation
-BinarySearchTree.h	BinarySearchTree header
-BSTNode.cc		Binary search tree node (BSTNode) implementation
-BSTNode.h		BSTNode header
-main.cc			driver for word-count
-Makefile		Makefile to build word-count
-MaxHeap.cc		Specialized max binary heap (MaxHeap) implementation
-MaxHeap.h		MaxHeap header
-README			This file
-SplayTree.cc		Splay tree (SplayTree) implementation
-SplayTree.h		SplayTree header
-TemplateInst.cc		Instantiation file for all templated classes
-heapsort.ps             Plot file for heapsort w/ splay tree on 10 files
-quicksort.ps            Plot file for quicksort w/ splay tree on 10 files
-selectionsort.ps        Plot file for selection sort w/ splay tree on 10 files
+AVLTNode.cc		            AVL tree node (AVLTNode) implementation
+AVLTNode.h		            AVLTNode header
+AVLTree.cc		            AVL tree (AVLTree) implementation
+AVLTree.h		            AVLTree header
+BinarySearchTree.cc	      Binary search tree (BinarySearchTree) implementation
+BinarySearchTree.h	      BinarySearchTree header
+BSTNode.cc		            Binary search tree node (BSTNode) implementation
+
+TemplateInst.cc		     Instantiation file for all templated classes
+heapsort.ps               Plot file for heapsort w/ splay tree on 10 files
+quicksort.ps              Plot file for quicksort w/ splay tree on 10 files
+selectionsort.ps          Plot file for selection sort w/ splay tree on 10 files
 
 
 Program can be built using default make arguments.

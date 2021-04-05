@@ -90,6 +90,7 @@ class Tree: ## binary search tree<<<<<BST>>>>
         self.inorder(curr.leftchild)
         print(curr.data)
         self.inorder(curr.rightchild)
+        
     def preorder(self):
         curr = self.root
         if not curr :
@@ -97,6 +98,42 @@ class Tree: ## binary search tree<<<<<BST>>>>
         print(curr.data)
         self.inorder(curr.leftchild)
         self.inorder(curr.rightchild)
+        
+    def preorder_indented(self  , data , depth):
+        # Print preorder representation of subtree of T rooted at p at depth d
+        """
+            Paper                   Paper
+            Title                     Title
+            Abstract                  Abstract
+            $ 1                         $ 1
+            $ 1.1                         $ 1.1
+            $ 1.2                         $ 1.2
+            $ 2                         $ 2
+            $ 2.1                         $ 2.1
+            ...                         ...        
+           """
+
+        """
+        def preorder indent(T, p, d):
+        
+            2 Print preorder representation of subtree of T rooted at p at depth d
+            3 print(2 d + str(p.element( ))) # use depth for indentation
+            4 for c in T.children(p):
+            5 preorder indent(T, c, d+1)
+            
+            ex : preorder indent(T, T.root( ), 0)
+        """
+        p , node = elf.get_parent_with_node(data)
+        #  use depth for indentation
+        if node :
+            print(2 * d + " " + str(node))
+            
+        # # child depth is d+1
+        if node.leftchild:
+            return preorder_indented(self  , data.leftchild , depth+1)
+        if node.rightchild:
+             return preorder_indented(self  , data.leftchild , depth+1)
+
     def postorder(self):
         curr = self.root
         if not curr :

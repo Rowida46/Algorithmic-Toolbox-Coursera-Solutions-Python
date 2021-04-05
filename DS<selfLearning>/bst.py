@@ -43,6 +43,7 @@ class Tree: ## binary search tree<<<<<BST>>>>
                 curr = curr.righthild
         return (parent , curr)
     
+    
     def delet(self , data):
         parent , node = self.get_parent_with_node(data)
         if not node and not parent :
@@ -103,6 +104,26 @@ class Tree: ## binary search tree<<<<<BST>>>>
         print(curr.data)
         self.inorder(curr.leftchild)
         self.inorder(curr.rightchild)
+        
+    def next_larger(self , x):
+        ## Mit 6-006 lec 5
+        parent , node = self.get_parent_with_node(x)
+        if node.rightchild :
+            return node.rightchild
+        else :
+            while parent:
+                """
+                
+                while y not NIL and x = right(y)
+                x = y; y = parent(y)
+                return(y);
+                while y = parent , x = data & node
+                """"
+                parent , node = self.get_parent_with_node(parent)
+                
+            return parent
+        
+        
     def BFS(self):
         Q = [self.root]
         list_of_nodes = []
@@ -114,17 +135,19 @@ class Tree: ## binary search tree<<<<<BST>>>>
             if node.rightchild :
                 list_of_nodes.append(node.rightchild)
         return list_of_nodes
+    
     def find_min(self):
         curr = self.root
         while curr.leftchild:
             curr = curr.leftchild
-
         return curr
+    
     def find_max(self):
         curr = self.root
         while curr.rightchild :
             curr = curr.rightchild
         return curr
+    
     def search(self , data):
         curr = self.root
         while True :
@@ -143,16 +166,19 @@ class Tree: ## binary search tree<<<<<BST>>>>
             return node
         else :
             return self.LeftDescendant(node.leftchild)
+        
     def RightAncestor(self , node):
         if not node.rightchild :
             return node
         else :
             return self.RightAncestor(node.rightchild)
+        
     def AdjacentElements(self , node): ### coursera week 5 slide3
         if not node.leftchild :
             return RightAncestor(node.rightchild)
         else:
             return LeftDescendant(node.leftchild)
+        
     def RangeSearch(self , x , y):
         list_of_inRange_elements = []
         node = self.search(x)

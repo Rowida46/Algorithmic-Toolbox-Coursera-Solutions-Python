@@ -6,6 +6,6 @@ This repository contains Python  -based solutions on Algorithm Toolbox Coursera 
 
 
 
-https://www.hackerrank.com/domains/data-structures
+- [Hackerrank DS problems]https://www.hackerrank.com/domains/data-structures
 
 

@@ -2,14 +2,17 @@ class Stack :
     def __init__(self):
         self.sack =[]
         self.size = -1
+
     def Max(self):
         try:
             return max(self.stack)
         except :
             return 'out of index'  
+        
     def push(self,x):
         self.size += 1
         self.stack.append(x)
+        
     def pop(self):
         if not self.stack :
             raise  Empty(' Stack is empty ')
@@ -17,24 +20,32 @@ class Stack :
         val = self.stack[-1]
         self.stack = self.stack[:-1]
         return val
+    
     def __len__(self):
         return self.size
+    
     def isempty(self):
         return self.size == -1
+    
     def top(self):
         if not self.stack:
             raise Empty( 'Stack is empty ')
         return self.stack[-1]
+    
     def Reversing_Data_Using_a_Stack(self , data = self.stack): 
         reversing_df = []
         while data:
             reversing_df.append(data.pop())
+        
         return reversing_df
-if len(stack) == 0:
-            stack.append(val)
+        
+    def build_max(self,val):
+        if len(self.stack) == 0:
+            self.stack.append(val)
         else:
-            currMax = stack[-1]
-            stack.append(val if val > currMax else currMax)
+            currMax = slef.stack[-1]
+            self.stack.append(val if val > currMax else currMax)
+            
 df = [9,8,3,2,4,5,6]
 stack = []
 for i in df:

@@ -15,10 +15,10 @@ class ArrQueue:
         # 2 >---------to make set first index as a null val
         self.arr[self.front] = None
         # 3>----------- to change the front position <circule arr>
-        self.arr[self.front] = (self.front) % len(self.arr) # to increament
-        # 4 >------- to decreament the size val of arr
-        self.size-=1
-       ## return the var  
+        self.arr[self.front] = self.arr[(self.front) % len(self.arr)] # to increament
+        # 4 >------- to decreament the front val of arr
+        self.front += 1 
+        # return the var  
         return val
     def enQueue(self , data):
         # to enqueue is to increament both the size and the tail by one and to append the new item
@@ -37,23 +37,23 @@ class ArrQueue:
     def front(self):
         # to return the first element
         return self.arr[self.front]
+    def __str__(self):
+        return ' '.join(map(str, self.arr[self.front: self.size +1]))
+
 que =ArrQueue()
 que.enQueue(9)
-que.arr[:que.size]
+que.enQueue(94)
+que.enQueue(93)
+que.enQueue(92)
+que.enQueue(19)
+que.enQueue(9)
+print(que.arr[:que.size])
+print(que.deQueue())
+print(str(que))
 
+(que.deQueue())
 
-
-
-
-
-
-
-
-
-
-
-
-
+print(str(que))
 
 
 
